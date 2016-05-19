@@ -33,6 +33,7 @@ public class Entity {
      */
     public Entity(String name, int[] baseStats, int[] baseGrowths, int[] randGrowths){
         this.name = name;
+        allStats = new Stat[9];
         for(int i=0;i<9;i++){
             allStats[i] = new Stat(baseStats[i],baseGrowths[i],randGrowths[i]);
         }
@@ -47,6 +48,7 @@ public class Entity {
      */
     public Entity(String name, int[] baseStats,int[] currentStats, int baseGrowths[], int[] randGrowths){
         this.name = name;
+        allStats = new Stat[9];
         for(int i=0;i<9;i++){
             allStats[i] = new Stat(baseStats[i],baseGrowths[i],randGrowths[i],currentStats[i]);
         }
