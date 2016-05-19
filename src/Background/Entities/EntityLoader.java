@@ -5,6 +5,7 @@
  */
 package Background.Entities;
 
+import Background.BattleActions.Element;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -53,6 +54,8 @@ public class EntityLoader {
             }
             int xp = Integer.parseInt(statNumbers[3][0]);
             int gold = Integer.parseInt(statNumbers[3][1]);
+            int element = Integer.parseInt(statNumbers[3][2]);
+            System.out.println(Element.getElementName(element));
             System.out.println(xp+"exp/"+gold+"gold");
             return new Entity(name, statsArray[0],statsArray[1],statsArray[2]);
             //MapTile[][] mapToLoad = new MapTile[tileIDs.length][tileIDs[0].length];
