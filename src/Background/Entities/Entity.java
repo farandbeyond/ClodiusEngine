@@ -24,9 +24,37 @@ public class Entity {
             SWIFTNESS = 8;
     String name;
     Stat[] allStats;
-    public Entity(String name){
+    /**
+     * Creation of a new Entity
+     * @param name
+     * @param baseStats
+     * @param baseGrowths
+     * @param randGrowths
+     */
+    public Entity(String name, int[] baseStats, int[] baseGrowths, int[] randGrowths){
         this.name = name;
+        for(int i=0;i<9;i++){
+            allStats[i] = new Stat(baseStats[i],baseGrowths[i],randGrowths[i]);
+        }
     }
+    /**
+     * Loading a saved entity
+     * @param name
+     * @param baseStats
+     * @param currentStats
+     * @param baseGrowths
+     * @param randGrowths
+     */
+    public Entity(String name, int[] baseStats,int[] currentStats, int baseGrowths[], int[] randGrowths){
+        this.name = name;
+        for(int i=0;i<9;i++){
+            allStats[i] = new Stat(baseStats[i],baseGrowths[i],randGrowths[i],currentStats[i]);
+        }
+    }
+    
+    public int getBaseStat(int stat){return allStats[stat].getBaseStat();}
+    public int getStat(int stat){return allStats[stat].getCurrentStat();}
+    
     public String getName(){return name;}
     private class Stat{
         int baseStat, currentStat;
