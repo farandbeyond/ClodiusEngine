@@ -11,14 +11,16 @@ package Background.Entities;
  */
 public class Entity {
     String name;
-    public Entity(String name){
+    Stat Strength;
+    public Entity(String name, int strength){
         this.name = name;
+        Strength = new Stat(strength,"Strength Stat, used for weapon damage");
     }
     public String getName(){return name;}
-    private class stat{
+    private class Stat{
         int value;
         String description;
-        stat(int value, String description){
+        Stat(int value, String description){
             this.value = value;
             this.description = description;
         }
