@@ -11,15 +11,27 @@ package Background.Item;
  */
 public abstract class Item {
     private final String name, desc;
-    private final int itemID, sellingPrice, buyingPrice;
-    private int quantity, maxQuatity;
+    private final int itemID, sellingPrice, buyingPrice, maxQuatity;
+    private int quantity;
     Item(String name, String desc, int itemID, int sellingPrice, int buyingPrice, int quantity, int maxQuantity){
         this.name = name;
         this.desc = desc;
         this.itemID = itemID;
+        if (sellingPrice < 0){
+            sellingPrice = 0;
+        }
         this.sellingPrice = sellingPrice;
+        if (buyingPrice < 0){
+            buyingPrice = 0;
+        }
         this.buyingPrice = buyingPrice;
+        if (quantity < 0){
+            quantity = 0;
+        }
         this.quantity = quantity;
+        if (maxQuantity < 1){
+            maxQuantity = 1;
+        }
         this.maxQuatity = maxQuantity;
     }
     Item(String name, String desc, int itemID, int sellingPrice, int buyingPrice, int quantity){
