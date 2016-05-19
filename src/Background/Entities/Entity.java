@@ -17,9 +17,12 @@ public class Entity {
     public String getName(){return name;}
     private class stat{
         int value;
-        stat(int value){
+        String description;
+        stat(int value, String description){
             this.value = value;
+            this.description = description;
         }
         public int getStat(){return value;}
+        public String getDesc(){return description;}
     }
 }
