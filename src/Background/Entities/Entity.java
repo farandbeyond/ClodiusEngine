@@ -15,4 +15,11 @@ public class Entity {
         this.name = name;
     }
     public String getName(){return name;}
+    private class stat{
+        int value;
+        stat(int value){
+            this.value = value;
+        }
+        public int getStat(){return value;}
+    }
 }
