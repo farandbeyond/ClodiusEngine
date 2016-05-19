@@ -32,15 +32,17 @@ public class EntityLoader {
                 splitLine = line.split(";");
             }while(Integer.parseInt(splitLine[0])!=entityID);
             contents+=splitLine[1]+":";
-            for(int i=0;i<3;i++){
+            
+            for(int i=0;i<4;i++){
                 line=fileReader.readLine();
                 contents+=line+":";
             }
+            
             fileReader.close();
             String[] entityLines = contents.split(":");
             String name = entityLines[0];
-            String[] statInfo = {entityLines[1],entityLines[2],entityLines[3]};
-            String[][] statNumbers = {statInfo[0].split(" "),statInfo[1].split(" "),statInfo[2].split(" ")};
+            String[] statInfo = {entityLines[1],entityLines[2],entityLines[3],entityLines[4]};
+            String[][] statNumbers = {statInfo[0].split(" "),statInfo[1].split(" "),statInfo[2].split(" "),statInfo[3].split(" ")};
             int[][] statsArray = new int[3][9];
             for(int i=0;i<3;i++){
                 for(int e=0;e<9;e++){
@@ -49,6 +51,9 @@ public class EntityLoader {
                     
                 }
             }
+            int xp = Integer.parseInt(statNumbers[3][0]);
+            int gold = Integer.parseInt(statNumbers[3][1]);
+            System.out.println(xp+"exp/"+gold+"gold");
             return new Entity(name, statsArray[0],statsArray[1],statsArray[2]);
             //MapTile[][] mapToLoad = new MapTile[tileIDs.length][tileIDs[0].length];
             //for(int i=0;i<tileIDs.length;i++){
