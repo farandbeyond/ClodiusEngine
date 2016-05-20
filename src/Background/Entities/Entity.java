@@ -23,6 +23,9 @@ public class Entity {
             KNOWLEDGE = 7, 
             SWIFTNESS = 8;
     String name;
+    int element;
+    boolean isDead;
+    
     Stat[] allStats;
     /**
      * Creation of a new Entity
@@ -31,8 +34,10 @@ public class Entity {
      * @param baseGrowths
      * @param randGrowths
      */
-    public Entity(String name, int[] baseStats, int[] baseGrowths, int[] randGrowths){
+    public Entity(String name, int[] baseStats, int[] baseGrowths, int[] randGrowths,int element){
         this.name = name;
+        this.element = element;
+        isDead = false;
         allStats = new Stat[9];
         for(int i=0;i<9;i++){
             allStats[i] = new Stat(baseStats[i],baseGrowths[i],randGrowths[i]);
@@ -46,16 +51,54 @@ public class Entity {
      * @param baseGrowths
      * @param randGrowths
      */
-    public Entity(String name, int[] baseStats,int[] currentStats, int baseGrowths[], int[] randGrowths){
+    public Entity(String name, int[] baseStats,int[] currentStats, int baseGrowths[], int[] randGrowths,int element){
         this.name = name;
+        this.element = element;
+        isDead = false;
         allStats = new Stat[9];
         for(int i=0;i<9;i++){
             allStats[i] = new Stat(baseStats[i],baseGrowths[i],randGrowths[i],currentStats[i]);
         }
     }
+    //hp controlling
+    public void damage(int damage){
+        allStats[STAMINA].decreaseStat(damage);
+        if(allStats[STAMINA].getCurrentStat()<=0){
+            isDead=true;
+            allStats[STAMINA].setStat(0);
+        }
+    }
+    public void heal(int heal){
+        if(!isDead){
+            allStats[STAMINA].increaseStat(heal);
+            if(allStats[STAMINA].getCurrentStat()>allStats[MAXSTAMINA].getCurrentStat()){
+                allStats[STAMINA].setStat(allStats[MAXSTAMINA].getCurrentStat());
+            }
+        }
+    }
+    public void raise(int heal){
+        if(isDead){
+            isDead=false;
+            heal(heal);
+        }
+    }
+    public void restoreEnergy(int mpHeal){
+        allStats[ENERGY].increaseStat(mpHeal);
+        if(allStats[ENERGY].getCurrentStat()>allStats[MAXENERGY].getCurrentStat()){
+            allStats[ENERGY].setStat(allStats[MAXENERGY].getCurrentStat());
+        }
+    }
     
+    public void levelUp(){
+        for(int i=0;i<9;i++){
+            allStats[i].levelUp();
+        }
+    }
+    
+    public int getElement(){return element;}
     public int getBaseStat(int stat){return allStats[stat].getBaseStat();}
     public int getStat(int stat){return allStats[stat].getCurrentStat();}
+    public boolean isDead(){return isDead;}
     
     public String getName(){return name;}
     private class Stat{

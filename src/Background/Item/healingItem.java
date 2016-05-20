@@ -5,6 +5,8 @@
  */
 package Background.Item;
 
+import Background.Entities.Player;
+
 /**
  *
  * @author Giulio

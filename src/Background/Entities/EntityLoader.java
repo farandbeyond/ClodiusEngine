@@ -57,7 +57,7 @@ public class EntityLoader {
             int element = Integer.parseInt(statNumbers[3][2]);
             System.out.println(Element.getElementName(element));
             System.out.println(xp+"exp/"+gold+"gold");
-            return new Entity(name, statsArray[0],statsArray[1],statsArray[2]);
+            return new Entity(name, statsArray[0],statsArray[1],statsArray[2],element);
             //MapTile[][] mapToLoad = new MapTile[tileIDs.length][tileIDs[0].length];
             //for(int i=0;i<tileIDs.length;i++){
             //    for(int p=0;p<tileIDs[0].length;p++){
