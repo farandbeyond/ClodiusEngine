@@ -18,7 +18,7 @@ import java.io.InputStreamReader;
  */
 public class EntityLoader {
     
-    public static Entity entityLoader(int entityID){
+    public static Enemy enemyLoader(int entityID){
         try{
             String contents = "";
             String filePath = String.format("EnemyInfo/enemyInfo.txt",entityID);
@@ -57,7 +57,7 @@ public class EntityLoader {
             int element = Integer.parseInt(statNumbers[3][3]);
             System.out.println(Element.getElementName(element));
             System.out.println(xp+"exp/"+gold+"gold");
-            return new Entity(name, statsArray[0],statsArray[1],statsArray[2],element);
+            return new Enemy(name, statsArray[0],statsArray[1],statsArray[2],element,xp,gold);
             //MapTile[][] mapToLoad = new MapTile[tileIDs.length][tileIDs[0].length];
             //for(int i=0;i<tileIDs.length;i++){
             //    for(int p=0;p<tileIDs[0].length;p++){
@@ -74,7 +74,7 @@ public class EntityLoader {
         }
     }
     public static void main(String[] args){
-        Entity wilson = entityLoader(2);
+        Enemy wilson = enemyLoader(2);
         System.out.println(wilson.getName());
         System.out.println(wilson.getStat(0));
         System.out.println(wilson.getStat(5));

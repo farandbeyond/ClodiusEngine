@@ -25,8 +25,9 @@ public class Entity {
     String name;
     int element;
     boolean isDead;
-    
     Stat[] allStats;
+    //ArrayList<Effect> effects;
+    
     /**
      * Creation of a new Entity
      * @param name
@@ -89,19 +90,14 @@ public class Entity {
         }
     }
     
-    public void levelUp(){
-        for(int i=0;i<9;i++){
-            allStats[i].levelUp();
-        }
-    }
-    
     public int getElement(){return element;}
     public int getBaseStat(int stat){return allStats[stat].getBaseStat();}
     public int getStat(int stat){return allStats[stat].getCurrentStat();}
+    public Stat alterStat(int stat){return allStats[stat];}
     public boolean isDead(){return isDead;}
     
     public String getName(){return name;}
-    private class Stat{
+    public class Stat{
         int baseStat, currentStat;
 	int baseGrowth, randGrowth;
         Random rand;
