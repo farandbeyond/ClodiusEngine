@@ -31,7 +31,7 @@ public class EntityLoader {
             do{
                 line=fileReader.readLine();
                 splitLine = line.split(";");
-            }while(Integer.parseInt(splitLine[0])!=entityID);
+            }while(splitLine[0].charAt(0)==' '?true:Integer.parseInt(splitLine[0])!=entityID);
             contents+=splitLine[1]+":";
             
             for(int i=0;i<4;i++){
@@ -47,14 +47,14 @@ public class EntityLoader {
             int[][] statsArray = new int[3][9];
             for(int i=0;i<3;i++){
                 for(int e=0;e<9;e++){
-                    System.out.println(i+""+e);
-                    statsArray[i][e] = Integer.parseInt(statNumbers[i][e]);
+                    //System.out.println(i+""+e);
+                    statsArray[i][e] = Integer.parseInt(statNumbers[i][e+1]);
                     
                 }
             }
-            int xp = Integer.parseInt(statNumbers[3][0]);
-            int gold = Integer.parseInt(statNumbers[3][1]);
-            int element = Integer.parseInt(statNumbers[3][2]);
+            int xp = Integer.parseInt(statNumbers[3][1]);
+            int gold = Integer.parseInt(statNumbers[3][2]);
+            int element = Integer.parseInt(statNumbers[3][3]);
             System.out.println(Element.getElementName(element));
             System.out.println(xp+"exp/"+gold+"gold");
             return new Entity(name, statsArray[0],statsArray[1],statsArray[2],element);
@@ -74,7 +74,7 @@ public class EntityLoader {
         }
     }
     public static void main(String[] args){
-        Entity wilson = entityLoader(1);
+        Entity wilson = entityLoader(2);
         System.out.println(wilson.getName());
         System.out.println(wilson.getStat(0));
         System.out.println(wilson.getStat(5));

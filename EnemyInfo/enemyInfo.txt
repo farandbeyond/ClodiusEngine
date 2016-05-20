@@ -1,5 +1,11 @@
+ --Element 0=fire 1=earth 2=lightning 3=water 4=neutral
 1;Wilson
-10 10 5 5 2 3 4 5 2 --baseStats
-2 2 3 3 0 0 2 1 1 --statBaseGrowths
-5 5 4 4 1 2 3 2 1 --statRandomGrowths
-50 40 4 --experience dropped / gold dropped  ELEMENT neutral=4
+ 10 10 5 5 2 3 4 5 2 --baseStats
+ 2 2 3 3 0 0 2 1 1 --statBaseGrowths
+ 5 5 4 4 1 2 3 2 1 --statRandomGrowths
+ 50 40 4 --experience dropped / gold dropped/element
+2;Training Dummy
+ 20 20 10 10 10 10 10 10 10
+ 1 1 1 1 1 1 1 1 1
+ 2 2 2 2 2 2 2 2 2
+ 100 10 1
