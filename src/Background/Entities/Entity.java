@@ -73,7 +73,8 @@ public class Entity {
         if(!isDead){
             allStats[STAMINA].increaseStat(heal);
             if(allStats[STAMINA].getCurrentStat()>allStats[MAXSTAMINA].getCurrentStat()){
-                allStats[STAMINA].setStat(allStats[MAXSTAMINA].getCurrentStat());
+                allStats[STAMINA].setStat(getStat(MAXSTAMINA));
+                //System.out.println("Caught an overheal");
             }
         }
     }
@@ -130,7 +131,8 @@ public class Entity {
         public void levelUp(){
             baseStat+=baseGrowth+rand.nextInt(randGrowth);
         }
-        public void setStat(int newStat){baseStat = newStat;}
+        public void setBaseStat(int newStat){baseStat = newStat;}
+        public void setStat(int newStat){currentStat = newStat;}
         public void increaseStat(int increase){currentStat+=increase;}
         public void decreaseStat(int decrease){currentStat-=decrease;}
     }

@@ -16,6 +16,7 @@ public class Player extends Entity{
     //Boots boots;
     
     int level, exp, expRequiredToLevel;
+    int guildPosition;
     
     public Player(String name, int[] baseStats, int[] baseStatGrowths, int[] rollStatGrowths, int element,int level, int exp){
         super(name,baseStats,baseStatGrowths,rollStatGrowths,element);
@@ -55,5 +56,8 @@ public class Player extends Entity{
             alterStat(i).levelUp();
         }
     }
+    
+    public int getGuildPosition(){return guildPosition;}
+    public void setGuildPosition(int position){guildPosition = position;}
     
 }

@@ -3,17 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Connor/Documents/NetBeansProjects/ClodiusEngine/src/Background/BattleActions/BattleActionTester.java</file>
-            <file>file:/C:/Users/Connor/Documents/NetBeansProjects/ClodiusEngine/src/Background/BattleActions/BattleAction.java</file>
-            <file>file:/C:/Users/Connor/Documents/NetBeansProjects/ClodiusEngine/src/Background/BattleActions/PhysicalAction.java</file>
-            <file>file:/C:/Users/Connor/Documents/NetBeansProjects/ClodiusEngine/src/Background/Item/usableItem.java</file>
+            <file>file:/C:/Users/Connor/Documents/NetBeansProjects/ClodiusEngine/src/Background/Entities/Enemy.java</file>
             <file>file:/C:/Users/Connor/Documents/NetBeansProjects/ClodiusEngine/src/Background/Entities/EntityLoader.java</file>
             <file>file:/C:/Users/Connor/Documents/NetBeansProjects/ClodiusEngine/src/Background/Entities/Entity.java</file>
-            <file>file:/C:/Users/Connor/Documents/NetBeansProjects/ClodiusEngine/src/Background/BattleActions/BattleActionLoader.java</file>
-            <file>file:/C:/Users/Connor/Documents/NetBeansProjects/ClodiusEngine/src/Background/Item/Item.java</file>
             <file>file:/C:/Users/Connor/Documents/NetBeansProjects/ClodiusEngine/src/Background/Entities/Player.java</file>
-            <file>file:/C:/Users/Connor/Documents/NetBeansProjects/ClodiusEngine/src/Background/Item/healingItem.java</file>
-            <file>file:/C:/Users/Connor/Documents/NetBeansProjects/ClodiusEngine/src/Background/BattleActions/Spell.java</file>
         </group>
     </open-files>
 </project-private>
